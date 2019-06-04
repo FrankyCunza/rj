@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rj Garri</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/fresco.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="js/fresco.js"></script>
+	<link href="site-assets/all.min.css?v=1.1.0" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css">
+	<script src="http://malsup.github.com/jquery.cycle2.js"></script><!--cycle 2-->
+	<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+					
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('<i class="fa fa-angle-down" aria-hidden="true"></i>');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('<i class="fa fa-angle-up" aria-hidden="true"></i>');
+			  }
+			});
+		  });
+				
+		});	
+		</script>
+		<script>
+			$(document).ready(function(){ 
+               $('.main').on('click',function(){
+                  $('.menu').toggle();
+               });
+            	});
+		</script>
+		<!--
+		<script type="text/javascript">
+			$(document).on("ready",function(){
+				$("#one").on("click", function(){
+					$("html,body").animate({ scrollTop : $(".cycle-slideshow").offset().top  }, 1500 );
+				});
+				$("#two").on("click", function(){
+					$("html,body").animate({ scrollTop : $("#quienes").offset().top  }, 1500 );
+				});
+				$("#three").on("click", function(){
+					$("html,body").animate({ scrollTop : $("#portafolio").offset().top  }, 1500 );
+				});
+			});
+		</script>-->
+		<script type="text/javascript">
+			$(document).on("ready",function(){
+				$(".fleini").on("click", function(){
+					$("html,body").animate({ scrollTop : $("#portafolio").offset().top  }, 1500 );
+				});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+			    $(document).on("scroll", onScroll);
+			    
+			    //smoothscroll
+			    $('a[href^="#"]').on('click', function (e) {
+			        e.preventDefault();
+			        $(document).off("scroll");
+			        
+			        $('a').each(function () {
+			            $(this).removeClass('active');
+			        })
+			        $(this).addClass('active');
+			      
+			        var target = this.hash,
+			            menu = target;
+			        $target = $(target);
+			        $('html, body').stop().animate({
+			            'scrollTop': $target.offset().top+2
+			        }, 500, 'swing', function () {
+			            window.location.hash = target;
+			            $(document).on("scroll", onScroll);
+			        });
+			    });
+			});
+
+			function onScroll(event){
+			    var scrollPos = $(document).scrollTop();
+			    $('#menu a').each(function () {
+			        var currLink = $(this);
+			        var refElement = $(currLink.attr("href"));
+			        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+			            $('#menu ul li a').removeClass("active");
+			            currLink.addClass("active");
+			        }
+			        else{
+			            currLink.removeClass("active");
+			        }
+			    });
+			}	
+</script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			<div class="intleft">
+				<div class="logo">
+					<img src="images/logo.png">
+				</div>
+				<div class="flerow">
+					<h1>	
+						<!--<img src="images/logo-txt.png">-->
+						<span class="linone"><span>RJ</span>GARRI<br></span>
+						<span class="lintwo">DO<span>LECCA</span></span>
+					</h1>
+					<img src="images/logo-initial.svg" class="logo-initial">
+					<div id="sidebar">
+						<div id="checkdiv"></div>
+						<nav class="stickydiv">
+							<a href="#" class="main slicknav_menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
+							<ul class="menu" id="menu">
+								<li><a href="#inicio" class="active">INICIO</a></li>
+								<li><a href="#portafolio">PORTAFOLIO</a></li>
+								<li><a href="#quienes">QUIÉNES SOMOS</a></li>
+							</ul>
+						</nav>
+					</div><!--fin de id sidebar-->
+				</div><!--fin de fle row-->
+			</div><!--fin d inleft-->
+		</div><!--fin de left-->
+		<div class="right">
+			<!--<div class="title">-->
+				<!--<img src="images/fondo.jpg" class="fondo">-->
+			<!--<div class="tit">
+					<div class="txttit">
+						<h2>OFICINAS ADMINISTRATIVAS</h2>
+						<p>EDELNOR</p>
+					</div>
+				</div>
+			</div>-->
+			<!--inicio de slider-->
+			<div id="inicio">
+				<div class="cycle-slideshow" 
+				    data-cycle-fx="fade" 
+				    data-cycle-timeout="8000"
+				    data-cycle-slides="> article"
+				    >
+				    <article>
+				        <div class="sli" style="background-image: url(images/fotounosli.png)">
+				        	<div class="c-tit">
+				        		<div class="c-txtit">
+				        			<h2>Centro Comercial</h2>
+				        			<p>Mega Plaza</p>
+				        		</div>
+				        	</div>
+				        </div><!--fin de sli-->
+				    </article><!--fin article slider-->
+				    <article>
+				        <div class="sli" style="background-image: url(images/fotodossli.png)">
+				        	<div class="c-tit">
+				        		<div class="c-txtit">
+				        			<h2>centro empresarial</h2>
+				        			<p>Edificio Real 12</p>
+				        		</div>
+				        	</div>
+				        </div><!--fin de sli-->
+				    </article><!--fin article slider-->
+				    <article>
+				        <div class="sli" style="background-image: url(images/fototressli.png)">
+				      		<div class="c-tit">
+				      			<div class="c-txtit">
+				      				<h2>Edificio de Postgrado</h2>
+				      				<p>Universidad de Lima</p>
+				      			</div>
+				      		</div>
+				        </div><!--fin de sli-->
+				    </article><!--fin article slider-->
+				</div><!--fin de slider-->
+			</div>
+			<div id="centerin"></div>
+				<div class="all allsecond">
+					<div class="cinc cincone">
+						<h3>
+						<div class="esquinauno"></div>
+							<span class="lharquitec">ARQUITECTURA</span><br>
+						PERSONALIZADA
+						<div class="esquinados"></div>
+						</h3>
+					</div><!--fin de cincone-->
+					<div class="cinc cinctwo">
+						<p>RJDO es una empresa dedicada a la gestión integral de proyectos de edificaciones. brindamos a nuestros clientes un servicio de alta calidad en todas las etapas del desarrollo de tu proyecto.</p>
+					</div><!--fin de cinctwo-->
+				</div><!--fin de all-->
+				<div class="fleini">
+						<a href="#portafolio"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					</div><!--fin de fleini-->
+				<div id="portafolio">
+				<div class="all alltwo">
+					<div class="cinc cincthree">
+						<h3>PORTAFOLIO</h3>
+					</div><!--fin de cincthree-->
+				</div>
+				<div class="allthree">
+					<ul class="images">
+						<li class="imgbig"><a href="images/fotouno.png" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>Mega Plaza</h2><p>Área proyectada 92,339 m2  - 2002</p>">
+	         			<img src="images/fotouno.png"></a></li>
+						<li><a href="images/fotodos.png" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>Edificio Real 12</h2><p>Área proyectada 9,722 m2  - Mayo 2001</p>"><img src="images/fotodos.png"></a></li>
+						<li><a href="images/fototres.png" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>Edificio de Postgrado Universidad de Lima</h2><p>Área proyectada 8,880 m2  - Julio 2002</p>"><img src="images/fototres.png"></a></li>
+
+					</ul>
+					<ul class="images" id="collapse1" style="display: none;">
+						<li class="imgbig"><a href="images/fotosiete.jpg" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>Edificio Telefónica Miraflores</h2><p>Área proyectada 16,690 m2  - Diciembre 1997</p>">
+	         			<img src="images/fotosiete.jpg"></a></li>
+						<li><a href="images/fotocinco.png" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>Mega Plaza</h2><p>Área proyectada 92,339 m2  - 2002</p>"><img src="images/fotocinco.png"></a></li>
+						<li><a href="images/fotoseis.jpg" 
+						class="fresco imghover" 
+						data-fresco-group='example'
+	         			data-fresco-caption="<h2>OFICINAS ADMINISTRATIVAS - EDELNOR</h2><p>Área proyectada 7,716 m2  - MAYO 2006</p>"><img src="images/fotoseis.jpg"></a></li>
+					</ul>
+					<div class="fle">
+						<a href="#collapse1" class="nav-toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div><!--fin de portafolio-->
+			<div id="quienes">
+				<div class="all allfour">
+					<div class="cinc cincfour">
+						<h3>QUIÉNES SOMOS</h3>
+					</div>
+				</div>
+				<div class="all">
+					<div class="cinc cincfive">
+						<h4>
+						ARQ.<br>
+						ROSARIO VIDAL<br>
+						GARRIDO LECCA<br>
+						</h4>
+						<p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor.</p>
+					</div>
+					<div class="cinc cincsix">
+						<h4>
+						ARQ.<br>
+						JORGE<br>
+						GARRIDO LECCA<br>
+						</h4>
+						<p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor.</p>
+					</div>
+				</div>
+				<div class="all">
+					<div class="cinc cincseven">
+						<h3 class="titfooter">
+							<span class="linone"><span>RJ</span>GARRI<br></span>
+							<span class="lintwo">DO<span>LECCA</span></span>
+						</h3>
+					</div>
+					<div class="cinceight">
+						<div class="cincnine">
+							<p>AVENIDA LAQUESEA 123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>T:555.1234</span></p>
+							<p>CHACARILLA - SURCO<span>F:555.1432</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/jquery.slicknav.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#menu').slicknav();
+		});
+	</script>
+</body>
+</html>

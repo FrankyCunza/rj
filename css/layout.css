@@ -1,0 +1,25 @@
+.l-container{
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .3);
+	width: 100%;
+	box-sizing:border-box;
+	}
+	
+.l-row{
+	clear:both;
+	overflow:hidden;
+	}
+.l-col100{
+	width:100%;
+	float:left;
+	}
+.l-col50{
+	width:50%;
+	float:left;
+	}
+.l-col33{
+	width:33.33%;
+	float:left;
+	}
+
+
+	
